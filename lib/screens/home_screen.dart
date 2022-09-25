@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_conferencing/conrollers/auth_controller.dart';
 import 'package:video_conferencing/screens/history_meeting_screen.dart';
 import 'package:video_conferencing/screens/meeting_screen.dart';
 import 'package:video_conferencing/utils/colors.dart';
@@ -23,8 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    CustomButton(text: 'Log Out', onPressed: () {})
-    //AuthMethods().signOut()),
+    CustomButton(
+        text: 'Log Out',
+        onPressed: () {
+          AuthController().signOut();
+        }),
   ];
 
   @override
