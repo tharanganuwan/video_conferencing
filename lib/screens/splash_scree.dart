@@ -1,8 +1,10 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:video_conferencing/screens/login_screen.dart';
+import 'package:video_conferencing/utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 100,
                 child: Image.asset(
                   Constants.imageAssets(
-                    'logo.jpg',
+                    'image.jpg',
                   ),
                 ),
               ),
