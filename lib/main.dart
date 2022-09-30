@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
+          print("-------------------------------------");
+          print(snapshot.data);
+          print("-------------------------------------");
 
           if (snapshot.hasData) {
             return const HomeScreen();

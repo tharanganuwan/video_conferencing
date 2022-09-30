@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_conferencing/conrollers/auth_controller.dart';
+import 'package:video_conferencing/screens/home_screen.dart';
 
 import '../widgets/custom_button.dart';
 
@@ -34,8 +35,14 @@ class _LoginScreenState extends State<LoginScreen> {
             text: 'Google Sign In',
             onPressed: () async {
               bool res = await _authController.signInWithGoogle(context);
+
               if (res) {
                 Navigator.pushNamed(context, '/home');
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const HomeScreen()));
+
               }
             },
           ),
