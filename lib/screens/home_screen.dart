@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:video_conferencing/conrollers/auth_controller.dart';
-import 'package:video_conferencing/screens/history_meeting_screen.dart';
-import 'package:video_conferencing/screens/meeting_screen.dart';
-import 'package:video_conferencing/utils/colors.dart';
-import 'package:video_conferencing/widgets/custom_button.dart';
+import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
+import 'package:zoom_clone_tutorial/screens/history_meeting_screen.dart';
+import 'package:zoom_clone_tutorial/screens/meeting_screen.dart';
+import 'package:zoom_clone_tutorial/utils/colors.dart';
+import 'package:zoom_clone_tutorial/widgets/custom_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,11 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    CustomButton(
-        text: 'Log Out',
-        onPressed: () {
-          AuthController().signOut();
-        }),
+    CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
   ];
 
   @override

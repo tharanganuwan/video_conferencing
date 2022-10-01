@@ -1,6 +1,6 @@
 {
-    "name": "video_conferencing",
-    "short_name": "video_conferencing",
+    "name": "zoom_clone_tutorial",
+    "short_name": "zoom_clone_tutorial",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

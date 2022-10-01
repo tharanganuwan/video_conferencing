@@ -1,11 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:video_conferencing/conrollers/auth_controller.dart';
-import 'package:video_conferencing/screens/home_screen.dart';
-import 'package:video_conferencing/screens/login_screen.dart';
-import 'package:video_conferencing/utils/colors.dart';
+import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
+import 'package:zoom_clone_tutorial/screens/home_screen.dart';
+import 'package:zoom_clone_tutorial/screens/login_screen.dart';
+import 'package:zoom_clone_tutorial/screens/video_call_screen.dart';
+import 'package:zoom_clone_tutorial/utils/colors.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -14,26 +15,27 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      title: 'Zoom Clone',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/video-call': (context) => const VideoCallScreen(),
+      },
       home: StreamBuilder(
-        stream: AuthController().authChanges,
+        stream: AuthMethods().authChanges,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          print("-------------------------------------");
-          print(snapshot.data);
-          print("-------------------------------------");
 
           if (snapshot.hasData) {
             return const HomeScreen();

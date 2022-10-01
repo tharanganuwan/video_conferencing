@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_conferencing/conrollers/auth_controller.dart';
-import 'package:video_conferencing/screens/home_screen.dart';
-
-import '../widgets/custom_button.dart';
+import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
+import 'package:zoom_clone_tutorial/widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final AuthController _authController = AuthController();
+  final AuthMethods _authMethods = AuthMethods();
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomButton(
             text: 'Google Sign In',
             onPressed: () async {
-              bool res = await _authController.signInWithGoogle(context);
-
+              bool res = await _authMethods.signInWithGoogle(context);
               if (res) {
                 Navigator.pushNamed(context, '/home');
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => const HomeScreen()));
-
               }
             },
           ),

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "video_conferencing" "\0"
+            VALUE "FileDescription", "zoom_clone_tutorial" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "video_conferencing" "\0"
+            VALUE "InternalName", "zoom_clone_tutorial" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "video_conferencing.exe" "\0"
-            VALUE "ProductName", "video_conferencing" "\0"
+            VALUE "OriginalFilename", "zoom_clone_tutorial.exe" "\0"
+            VALUE "ProductName", "zoom_clone_tutorial" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
