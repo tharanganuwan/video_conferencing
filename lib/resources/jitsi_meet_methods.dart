@@ -18,6 +18,7 @@ class JitsiMeetMethods {
       featureFlag.welcomePageEnabled = false;
       featureFlag.resolution = FeatureFlagVideoResolution
           .MD_RESOLUTION; // Limit video resolution to 360p
+      featureFlag.inviteEnabled = false;
       String name;
       if (username.isEmpty) {
         name = _authMethods.user.displayName!;

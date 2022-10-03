@@ -15,8 +15,8 @@ class MeetingOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: backgroundColor,
       height: 60,
-      color: secondaryBackgroundColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

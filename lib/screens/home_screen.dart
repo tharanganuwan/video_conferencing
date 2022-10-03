@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_clone_tutorial/resources/auth_methods.dart';
+import 'package:zoom_clone_tutorial/screens/contact_screen.dart';
 import 'package:zoom_clone_tutorial/screens/history_meeting_screen.dart';
 import 'package:zoom_clone_tutorial/screens/meeting_screen.dart';
+import 'package:zoom_clone_tutorial/screens/settings_screen.dart';
 import 'package:zoom_clone_tutorial/utils/colors.dart';
 import 'package:zoom_clone_tutorial/widgets/custom_button.dart';
 
@@ -23,23 +25,26 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     MeetingScreen(),
     const HistoryMeetingScreen(),
-    const Text('Contacts'),
-    CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
+    ContactScreen(),
+    SettingScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: backgroundColor,
-        elevation: 0,
-        title: const Text('Meet & Chat'),
+        backgroundColor: Colors.white,
+        elevation: 2,
+        title: const Text(
+          'Meet & Chat',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
       ),
       body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: footerColor,
-        selectedItemColor: Colors.white,
+        backgroundColor: Colors.white,
+        selectedItemColor: buttonColor,
         unselectedItemColor: Colors.grey,
         onTap: onPageChanged,
         currentIndex: _page,

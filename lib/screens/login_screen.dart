@@ -15,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -27,16 +28,19 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 38.0),
-            child: Image.asset('assets/images/onboarding.jpg'),
+            child: Image.asset('assets/images/cover.png'),
           ),
-          CustomButton(
-            text: 'Google Sign In',
-            onPressed: () async {
-              bool res = await _authMethods.signInWithGoogle(context);
-              if (res) {
-                Navigator.pushNamed(context, '/home');
-              }
-            },
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: CustomButton(
+              text: 'Google Sign In',
+              onPressed: () async {
+                bool res = await _authMethods.signInWithGoogle(context);
+                if (res) {
+                  Navigator.pushNamed(context, '/home');
+                }
+              },
+            ),
           ),
         ],
       ),

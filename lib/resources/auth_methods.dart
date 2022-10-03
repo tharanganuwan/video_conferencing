@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:zoom_clone_tutorial/screens/login_screen.dart';
+import 'package:zoom_clone_tutorial/utils/util_function.dart';
 import 'package:zoom_clone_tutorial/utils/utils.dart';
 
 class AuthMethods {
@@ -46,8 +48,9 @@ class AuthMethods {
     return res;
   }
 
-  void signOut() async {
+  void signOut(BuildContext context) async {
     try {
+      UtilFunctions.navigator(context, LoginScreen());
       _auth.signOut();
     } catch (e) {
       print(e);
